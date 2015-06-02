@@ -1,0 +1,25 @@
+{
+  "name": "moaModal",
+  "version": "2.0.0",
+  "homepage": "http://sweefty.com/moaModal",
+  "authors": [
+    "mamod <mamod.mehyar@gmail.com>"
+  ],
+  "description": "Flexible Tiny jQuery modal plugin",
+  "main": [
+    "src/moaModal.js",
+    "src/moaModal-minified.js"
+  ],
+  "keywords": [
+    "modal",
+    "overlay"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>moaModal - Demo</title>
+
+        <meta name="language" content="English">
+
+        <meta name="description" content="moaModal Examples">
+        
+        <meta name="keywords" content="web design, templates, jQuery plugins, UX articles">
+
+        <meta name="author" content="Sweefty.com">
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        
+        <!-- Mobile Specific Metas -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+        <!-- CSS Files -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css">
+
+        <!-- JAVASCRIPT  Files -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js" type="text/javascript"></script>
+
+        <!-- FONTS -->
+        <link href='https://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        
+        <script src="../src/moaModal-minified.js"></script>
+
+        <style>
+            body {
+                background : #f2f2f2;
+            }
+
+            .modal {
+                display: none;
+                background: #ccc;
+                width: 50%;
+                text-align: center;
+                padding: 30px;
+                color: #f2f2f2;
+            }
+
+            .modal h1 {
+                font-family: "Dosis"
+            }
+
+            .button {
+                font-family: "Dosis";
+                font-size : 24px;
+                cursor: pointer;
+                color: #fff;
+                width: 100px;
+                padding: 10px;
+                margin-top: 20px;
+            }
+
+            .button.modal1 {
+                background: #e74c3c;
+            }
+
+            .button.modal2 {
+                background: #55acee;
+            }
+
+            .button.modal3 {
+                background: #e67e22;
+            }
+
+            .button.modal4 {
+                background: #2ecc71;
+            }
+
+            button {
+                color: #000;
+            }
+        </style>
+
+        <script>
+            $(document).ready(function(){
+                
+                //global settings
+                $(document).modal({
+                    easing : 'linear',
+                    speed : 250,
+                    animation : 'none',
+                    position : 'center',
+                    overlayClose : true,
+                    escapeClose : false,
+                    overlayColor : '#888'
+                });
+
+                //trigger some button/link with modal specified
+                //with target option
+                $('.modal1').modal({
+                    target : $('#modal1'),
+                    easing : 'linear',
+                    position : '10px auto',
+                    animation : 'top',
+                    speed : 250
+                });
+
+                //view modal option
+                $('.modal2').click(function(){
+                    $('#modal2').modal('view', {
+                        position : 'center',
+                        animation : 'none',
+                        speed : 150
+                    });
+                });
+
+                $('.modal3').click(function(){
+                    $('#modal3').modal('view', {
+                        position : 'center',
+                        animation : 'right',
+                        easing : 'easeOutBounce',
+                        speed : 500,
+                        overlayClose : false,
+                        escapeClose : true
+                    });
+                });
+
+                $('.modal4').click(function(){
+                    $('#modal4').modal('view', {
+                        position : 'bottom',
+                        animation : 'bottom',
+                        easing : 'easeOutCubic',
+                        speed : 300,
+                        overlayClose : false,
+                        overlayColor : '#000',
+                        overlayOpacity : .9,
+                        close : $('.closeMe')
+                    });
+                });
+                
+            });
+        </script>
+    </head>
+    
+    <body>
+        <div class="header"></div>
+        <div>
+            <div class="button modal1">Modal #1</div>
+            <div class="button modal2">Modal #2</div>
+            <div class="button modal3">Modal #3</div>
+            <div class="button modal4">Modal #4</div>
+        </div>
+
+        
+        <div class="modal" id="modal1">
+            <h1>Modal Demo #1</h1>
+        </div>
+
+        <div class="modal" id="modal2">
+            <h1>Modal Demo #2</h1>
+        </div>
+
+        <div class="modal" id="modal3">
+            <h1>Modal Demo #3</h1>
+            <p>Use Escape Key To Close Me</p>
+        </div>
+
+        <div class="modal" id="modal4">
+            <button class="closeMe">Close Me</button>
+            <h1>Modal Demo #4</h1>
+        </div>
+
+    </body>
+</html>
